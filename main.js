@@ -1,15 +1,16 @@
-const penals = document.querySelectorAll('.penal')
+const panels = document.querySelectorAll('.panel');
 
-function taggleOpen(){
-    this.classList.taggle('open');
-}
-
-function toggleActive(e){
-    console.log(e.propertyName)
-    if (e.propertyName.includes('flex')){
-        this.classList.taggle('open-active')
+    function toggleOpen() {
+      console.log('Hello');
+      this.classList.toggle('open');
     }
-}
 
-penals.forEach(penal => penal.addEventListener('click', taggleOpen))
-penals.forEach(penal => penal.addEventListener('transitionend', toggleActive))
+    function toggleActive(e) {
+      console.log(e.propertyName);
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
